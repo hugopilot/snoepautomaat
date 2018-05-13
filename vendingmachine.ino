@@ -1,4 +1,9 @@
-#include Selections.cpp
+/* Code written by Hugo Woesthuis and Rogier Boertje
+ *  All Rights Reserved
+ */
+
+#include "Product.h"
+#include "Movements.h"
 
 void setup() {
   // put your setup code here, to run once:

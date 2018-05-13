@@ -1,11 +1,15 @@
+/* Code written by Hugo Woesthuis and Rogier Boertje
+ *  All Rights Reserved
+ */
+
+
 #ifndef PRODUCT_H
 #define PRODUCT_H
-public:
+#include "Positions.h"
   // struct for a product
   struct Product{
-    int position;
-    double price;
-	char[] name;
-  }
-  Product[] GetAllProducts();
+    Position pos;
+    double Price;
+	  char Name [];
+  };
 #endif
