@@ -5,11 +5,11 @@
 
 #ifndef PRODUCT_H
 #define PRODUCT_H
-#include "Positions.h"
+#include "Positions.hpp"
   // struct for a product
   struct Product{
     Position pos;
-    double Price;
+    float Price;
 	  char Name [];
   };
 #endif

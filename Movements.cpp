@@ -2,8 +2,8 @@
  *  All Rights Reserved
  */
 
-#include "Movements.h" 
-#include "Product.h"
+#include "Movements.hpp" 
+#include "Product.hpp"
 #include <Arduino.h>
 
 // value for the servo when opened
