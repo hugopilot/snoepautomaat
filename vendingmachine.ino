@@ -4,10 +4,12 @@
 
 #include "Product.hpp"
 #include "Movements.hpp"
+#include "ServoHandler.cpp"
+#include <Servo.h>
 
 void setup() {
   // put your setup code here, to run once:
-  
+  Servo sv1 = GenerateServoClass(9);
 
 }
 

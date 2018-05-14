@@ -3,8 +3,7 @@
  */
 #ifndef SERVOHANDLER_CPP
 #define SERVOHANDLER_CPP
- #include "ServoHandler.h"
-
+#include "ServoHandler.h"
   Servo GenerateServoClass(int ControlPort){
     Servo sv;
     sv.attach(ControlPort);
