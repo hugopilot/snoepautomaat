@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include <EEPROM.h>
-class MemCon{
   float readFloat(unsigned int addr)
   {
     union
@@ -32,7 +31,6 @@ class MemCon{
       EEPROM.write(addr + i, x[i]);
     }
   }
-  byte getByte(unsigned int addr){
+  static int getInt(unsigned int addr){
     return EEPROM.read(addr);
   }
-};

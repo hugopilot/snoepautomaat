@@ -5,7 +5,7 @@ class MemCon{
    float readFloat(unsigned int addr);
    void writeFloat(unsigned int addr, float x);
    void writeByte(unsigned int addr, byte x);
-   byte getByte(unsigned int addr);
+   static int getInt(unsigned int addr);
 };
   
 #endif
