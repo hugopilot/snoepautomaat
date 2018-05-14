@@ -1,5 +1,5 @@
 ; EEPROM Adress Allocation Scheme
-; Total length is 7 bytes per product
+; Total length is 8 bytes per product
 ;
 ; This is what it should be:
 ; 0 = Index/position of the product
