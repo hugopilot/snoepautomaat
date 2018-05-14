@@ -11,6 +11,10 @@ Servo sv2;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  // Meer setup
+
+  Serial.println("Setup Completed!");
+  Serial.println("Vending machine started with success");
 }
 
 void loop() {
