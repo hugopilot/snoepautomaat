@@ -10,6 +10,6 @@
   struct Product{
     Position pos;
     float Price;
-	  char Name [];
+    int CurrentQuantity;
   };
 #endif

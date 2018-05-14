@@ -27,5 +27,12 @@ class MemCon{
       EEPROM.write(addr+i, data.b[i]);
     }
   }
+  void writeBytes(unsigned int addr, byte x[]){
+    for(int i = 0; i < (sizeof(x)/sizeof(*x)); i++){
+      EEPROM.write(addr + i, x[i]);
+    }
+  }
+  byte getByte(unsigned int addr){
+    return EEPROM.read(addr);
+  }
 };
-

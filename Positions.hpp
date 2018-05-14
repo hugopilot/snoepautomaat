@@ -2,7 +2,6 @@
  *  All Rights Reserved
  */
 
-
 #ifndef POSITIONS_H
 #define POSITIONS_H
 #include <Servo.h>
