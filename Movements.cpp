@@ -51,4 +51,11 @@ class Movements
         // Sluit holding servo 
         hS.write(servoClosedValue);
       }
+
+      static void ClosePorts(Servo ports[]){
+        for(int s = 0; s < (sizeof(ports)/sizeof(*ports)); s++){
+          Servo sv = ports[s];
+          sv.write(servoClosedValue);
+        }
+      }
     };

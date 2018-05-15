@@ -9,6 +9,7 @@ class Movements{
   public:
   static void ReleaseProduct(Product product);
   static void RenewProduct(Product product);
+  static void ClosePorts(Servo ports[]);
   private:
   // value for the servo when opened
   const int servoOpenValue;
