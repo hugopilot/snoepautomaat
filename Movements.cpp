@@ -7,10 +7,11 @@
 #include <Arduino.h>
 
 // value for the servo when opened
-const int servoOpenValue = 80;
-
+const int servoOpenValue1 = 80;
+const int servoOpenValue2 = 0;
 // value for the servo when closed
-const int servoClosedValue = 180;
+const int servoClosedValue1 = 180;
+const int servoClosedValue2 = 90;
 
 class Movements
     { 
@@ -20,16 +21,16 @@ class Movements
         Servo hS = product.HoldServo;
   
         // Zeker zijn dat de hold servo omhoog is
-        hS.write(servoClosedValue);   
+        hS.write(servoClosedValue2);   
 
         // Release het product   
-        pS.write(servoOpenValue);
+        pS.write(servoOpenValue2);
 
         // 3 seconden delay
         delay(3000);
 
         // Sluit poort
-        pS.write(servoClosedValue);
+        pS.write(servoClosedValue2);
       }
       
       static void RenewProduct(Product product){
@@ -37,25 +38,23 @@ class Movements
         Servo hS = product.HoldServo;
 
         // Zorg ervoor dat de port servo omhoog is 
-        pS.write(servoClosedValue);
+        pS.write(servoClosedValue2);
 
         // Delay zodat servo tijd heeft om omhoog te gaan
         delay(300);  
         
         // Laat een nieuw product komen
-        hS.write(servoOpenValue);
+        hS.write(servoOpenValue2);
 
         // Wacht 3 seconden
         delay(2500);  
 
         // Sluit holding servo 
-        hS.write(servoClosedValue);
+        hS.write(servoClosedValue2);
       }
 
-      static void ClosePorts(Servo ports[]){
-        for(int s = 0; s < (sizeof(ports)/sizeof(*ports)); s++){
-          Servo sv = ports[s];
-          sv.write(servoClosedValue);
-        }
+      static void ClosePorts(Servo port){
+       
+          port.write(servoClosedValue2);
       }
     };

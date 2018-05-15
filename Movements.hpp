@@ -12,9 +12,10 @@ class Movements{
   static void ClosePorts(Servo ports[]);
   private:
   // value for the servo when opened
-  const int servoOpenValue;
-
+  const int servoOpenValue1;
+  const int servoOpenValue2;
   // value for the servo when closed
-  const int servoClosedValue;
+  const int servoClosedValue1;
+  const int servoClosedValue2;
 }
 #endif
