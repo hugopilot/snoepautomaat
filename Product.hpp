@@ -8,8 +8,16 @@
 #include "Positions.hpp"
   // struct for a product
   struct Product{
-    Position pos;
+    // Deze servo houdt de product tegen
+    Servo PortServo;
+
+    // Deze servo houd het product omhoog
+    Servo HoldServo;
+
+    // Prijs van product
     float Price;
+
+    // Huidige hoeveelheid
     int CurrentQuantity;
   };
 #endif

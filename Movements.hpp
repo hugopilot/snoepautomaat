@@ -7,7 +7,13 @@
 #define MOVEMENTS_H
 class Movements{
   public:
-  void ReleaseProduct(Product product);
-  void RenewProduct(Product product);
+  static void ReleaseProduct(Product product);
+  static void RenewProduct(Product product);
+  private:
+  // value for the servo when opened
+  const int servoOpenValue;
+
+  // value for the servo when closed
+  const int servoClosedValue;
 }
 #endif

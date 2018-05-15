@@ -5,12 +5,9 @@
 #include "Positions.hpp"
 class PublicSettings{
   public:
-  Product GetProduct(int ID);
   int GetNumberOfProducts();
   private:
   const int NumberOfProducts;
-  Product products[];
-  Position pos[];
 };
 
 #endif
