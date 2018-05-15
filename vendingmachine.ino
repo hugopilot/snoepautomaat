@@ -27,10 +27,15 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  
+
+  // Get analoge waarden
   a = analogRead(A0);
   b = analogRead(A1);
-  if(a > 255){
+
+  // Stel een delay in om plotselinge release te voorkomen
+  delay(5);
+  
+  if(a > 50){
     if(pp[0].CurrentQuantity <= 0){
       Serial.println("Product is niet beschrikbaar");
       }
@@ -43,7 +48,7 @@ void loop() {
       Serial.println(" left.");
       }
     }
-    else if(b > 255){
+    else if(b > 50){
       if(pp[1].CurrentQuantity <= 0){
         Serial.println("Product is niet beschrikbaar");
       }

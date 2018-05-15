@@ -4,14 +4,8 @@
 
 #include "Movements.hpp" 
 #include "Product.hpp"
+#include "integers.c"
 #include <Arduino.h>
-
-// value for the servo when opened
-const int servoOpenValue1 = 80;
-const int servoOpenValue2 = 0;
-// value for the servo when closed
-const int servoClosedValue1 = 180;
-const int servoClosedValue2 = 90;
 
 class Movements
     { 
@@ -21,16 +15,16 @@ class Movements
         Servo hS = product.HoldServo;
   
         // Zeker zijn dat de hold servo omhoog is
-        hS.write(servoClosedValue2);   
+        hS.write(GeneralServoClosedValue);   
 
         // Release het product   
-        pS.write(servoOpenValue2);
+        pS.write(GeneralServoOpenValue);
 
         // 3 seconden delay
         delay(3000);
 
         // Sluit poort
-        pS.write(servoClosedValue2);
+        pS.write(GeneralServoClosedValue);
       }
       
       static void RenewProduct(Product product){
@@ -38,23 +32,23 @@ class Movements
         Servo hS = product.HoldServo;
 
         // Zorg ervoor dat de port servo omhoog is 
-        pS.write(servoClosedValue2);
+        pS.write(GeneralServoClosedValue);
 
         // Delay zodat servo tijd heeft om omhoog te gaan
         delay(300);  
         
         // Laat een nieuw product komen
-        hS.write(servoOpenValue2);
+        hS.write(GeneralServoOpenValue);
 
         // Wacht 3 seconden
         delay(2500);  
 
         // Sluit holding servo 
-        hS.write(servoClosedValue2);
+        hS.write(GeneralServoClosedValue);
       }
 
       static void ClosePorts(Servo port){
        
-          port.write(servoClosedValue2);
+          port.write(GeneralServoClosedValue);
       }
     };
