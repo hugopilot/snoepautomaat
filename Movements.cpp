@@ -4,51 +4,50 @@
 
 #include "Movements.hpp" 
 #include "Product.hpp"
-#include "integers.c"
 #include <Arduino.h>
 
 class Movements
     { 
       public:
-      static void ReleaseProduct(Product product){
+      static void ReleaseProduct(Product product, int ClosedValue, int OpenValue){
         Servo pS = product.PortServo;
         Servo hS = product.HoldServo;
   
         // Zeker zijn dat de hold servo omhoog is
-        hS.write(GeneralServoClosedValue);   
+        hS.write(ClosedValue);   
 
         // Release het product   
-        pS.write(GeneralServoOpenValue);
+        pS.write(OpenValue);
 
         // 3 seconden delay
         delay(3000);
 
         // Sluit poort
-        pS.write(GeneralServoClosedValue);
+        pS.write(ClosedValue);
       }
       
-      static void RenewProduct(Product product){
+      static void RenewProduct(Product product, int ClosedValue, int OpenValue){
         Servo pS = product.PortServo;
         Servo hS = product.HoldServo;
 
         // Zorg ervoor dat de port servo omhoog is 
-        pS.write(GeneralServoClosedValue);
+        pS.write(ClosedValue);
 
         // Delay zodat servo tijd heeft om omhoog te gaan
         delay(300);  
         
         // Laat een nieuw product komen
-        hS.write(GeneralServoOpenValue);
+        hS.write(OpenValue);
 
         // Wacht 3 seconden
         delay(2500);  
 
         // Sluit holding servo 
-        hS.write(GeneralServoClosedValue);
+        hS.write(ClosedValue);
       }
 
-      static void ClosePorts(Servo port){
+      static void ClosePorts(Servo port, int ClosedValue){
        
-          port.write(GeneralServoClosedValue);
+          port.write(ClosedValue);
       }
     };

@@ -1,36 +1,5 @@
-//*********************************************************************************
-//    Lightweight Arduino Compatible implementation of key STL Vector methods
-//*********************************************************************************
-//
-// Zac Staples
-// zacstaples (at) mac (dot) com
-//
-// 13 June 2014...Friday the 13th...therfore this is probably broken
-//
-// I needed a data structure to hold refernces and/or pointers as a data
-// member of an abstract class for sensors on my robot.  That's the point
-// I decided I wanted the basic implementation of the STL vector available 
-// to me in my Arduino sketches.  This is not a complete implementation of
-// the STL vector, but is designed to be "good enough" to take sketches
-// further into OOP.
-//
-// Based on Stroustrup's basic implementation of vector in Programming 3rd
-// edition page 656 and his Simple allocator from The c++ programming 
-// language, 4th edition.  However, I needed info from the following sources
-// to implement to allocator to correctly handle placement new in 
-// the AVR/Arduino environment.
-//
-// http://www.codeproject.com/Articles/4795/C-Standard-Allocator-An-Introduction-and-Implement
-// http://www.glenmccl.com/nd_cmp.htm
-// http://www.sourcetricks.com/2008/05/c-placement-new.html#.U5yJF41dW0Q
-// http://stackoverflow.com/questions/9805829/arduino-c-destructor
-// http://arduino.land/FAQ/index.php?solution_id=1023
-//
-// Released on the beer license...if this works for you...then remember my
-// name an buy me a beer sometime.
-
 #ifndef VECTOR_H
-#define VECTOR_H JUN_2014
+#define VECTOR_H
 
 #include <arduino.h>
 
@@ -40,9 +9,7 @@ void* operator new(size_t s, T* v){
 	return v;
 }
 
-//*********************************************************************************
-//                               Allocator for Vector
-//*********************************************************************************
+// Allocation
 template<typename T> struct Simple_alloc {
 
 	Simple_alloc() {};
@@ -58,9 +25,7 @@ template<typename T> struct Simple_alloc {
 	void destroy(T* p) { p->~T(); }	
 };
 
-//*********************************************************************************
-//                               Vector
-//*********************************************************************************
+// Vector template
 template<class T, class A = Simple_alloc<T> > 
 class Vector {
 	
@@ -70,10 +35,7 @@ class Vector {
 	T* elem;
 	int space;
 	
-	Vector(const Vector&);			//private copy constrution because I
-									//have not got this working yet and don't
-									//want to expose this for clients who might
-									//be expecting it.
+	Vector(const Vector&);			// private copy constrution because I have not got this working yet and don't want to expose this for clients who might be expecting it.
 	
 public:
 	Vector() : sz(0), elem(0), space(0) {}
