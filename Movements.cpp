@@ -9,6 +9,20 @@
 class Movements
     { 
       public:
+      static void ReleaseAndRenew(Product product, int ClosedValue, int OpenValue){
+        ReleaseProduct(product, ClosedValue, OpenValue);
+        RenewProduct(product, ClosedValue, OpenValue);
+      }
+
+      static void Release(Product product, int ClosedValue, int OpenValue){
+        ReleaseProduct(product, ClosedValue, OpenValue);
+      }
+
+      static void ClosePorts(Servo port, int ClosedValue){
+       
+          port.write(ClosedValue);
+      }
+      private:
       static void ReleaseProduct(Product product, int ClosedValue, int OpenValue){
         Servo pS = product.PortServo;
         Servo hS = product.HoldServo;
@@ -44,10 +58,5 @@ class Movements
 
         // Sluit holding servo 
         hS.write(ClosedValue);
-      }
-
-      static void ClosePorts(Servo port, int ClosedValue){
-       
-          port.write(ClosedValue);
       }
     };
