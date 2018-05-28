@@ -35,7 +35,7 @@ class Vector {
 	T* elem;
 	int space;
 	
-	Vector(const Vector&);			// private copy constrution because I have not got this working yet and don't want to expose this for clients who might be expecting it.
+	Vector(const Vector&);			// private copy, werkt nog niet
 	
 public:
 	Vector() : sz(0), elem(0), space(0) {}
