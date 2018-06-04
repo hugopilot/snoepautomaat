@@ -5,7 +5,7 @@
 
 #ifndef PRODUCT_H
 #define PRODUCT_H
-#include "Positions.hpp"
+#include <Servo.h>
   // struct for a product
   struct Product{
     // Deze servo houdt de product tegen
