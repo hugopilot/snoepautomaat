@@ -45,7 +45,10 @@ void loop() {
   int b3State = digitalRead(Button3_PIN);
   
   if(b1State == HIGH){
-    if(pp[0].CurrentQuantity <= 1){
+    if(pp[0].CurrentQuantity < 1){
+      // Niks doen
+    }
+    else if(pp[0].CurrentQuantity == 1){
       Movements::Release(pp[0], 90, 10);
     }
     else{
@@ -54,18 +57,24 @@ void loop() {
       
   }
   else if(b2State == HIGH){
-    if(pp[1].CurrentQuantity <= 1){
+    if(pp[1].CurrentQuantity < 1){
+      // Niks doen
+    }
+    else if(pp[1].CurrentQuantity <= 1){
       Movements::Release(pp[1], 90, 10);
     }
     else{
       Movements::ReleaseAndRenew(pp[1], 90, 10);
     }}
     else if(b3State == HIGH){
-    if(pp[2].CurrentQuantity <= 1){
+     if(pp[2].CurrentQuantity < 1){
+      // Niks doen
+    }
+    else if(pp[2].CurrentQuantity <= 1){
       Movements::Release(pp[2], 90, 10);
     }
     else{
       Movements::ReleaseAndRenew(pp[2], 90, 10);
     }
   }
-  }
+}
