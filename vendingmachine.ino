@@ -60,7 +60,7 @@ void loop() {
     if(pp[1].CurrentQuantity < 1){
       // Niks doen
     }
-    else if(pp[1].CurrentQuantity <= 1){
+    else if(pp[1].CurrentQuantity == 1){
       Movements::Release(pp[1], 90, 10);
     }
     else{
@@ -70,7 +70,7 @@ void loop() {
      if(pp[2].CurrentQuantity < 1){
       // Niks doen
     }
-    else if(pp[2].CurrentQuantity <= 1){
+    else if(pp[2].CurrentQuantity == 1){
       Movements::Release(pp[2], 90, 10);
     }
     else{
