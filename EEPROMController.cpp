@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <EEPROM.h>
-  float readFloat(unsigned int addr)
+  static float readFloat(unsigned int addr)
   {
     union
     {
@@ -13,7 +13,7 @@
     }
     return data.f;
   }
-  void writeFloat(unsigned int addr, float x)
+  static void writeFloat(unsigned int addr, float x)
   {
     union
     {
@@ -26,7 +26,7 @@
       EEPROM.write(addr+i, data.b[i]);
     }
   }
-  void writeBytes(unsigned int addr, byte x[]){
+  static void writeBytes(unsigned int addr, byte x[]){
     for(int i = 0; i < (sizeof(x)/sizeof(*x)); i++){
       EEPROM.write(addr + i, x[i]);
     }
